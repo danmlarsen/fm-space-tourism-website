@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Barlow';
+    src: url('/assets/fonts/Barlow/Barlow-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: 'Barlow Condensed';
+    src: url('/assets/fonts/Barlow_Condensed/BarlowCondensed-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: 'Bellefair';
+    src: url('/assets/fonts/Bellefair/Bellefair-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 400;
+  }
+}
