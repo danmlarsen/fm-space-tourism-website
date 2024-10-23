@@ -1,9 +1,37 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import AppLayout from "./components/AppLayout";
+import Home from "./pages/Home";
+import Destination from "./pages/Destination";
+import Crew from "./pages/Crew";
+import Technology from "./pages/Technology";
+
+const router = createBrowserRouter([
+  {
+    element: <AppLayout />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "/destination/:id?",
+        element: <Destination />,
+      },
+      {
+        path: "/crew",
+        element: <Crew />,
+      },
+      {
+        path: "/technology",
+        element: <Technology />,
+      },
+    ],
+  },
+]);
+
 function App() {
-  return (
-    <div className="grid min-h-screen place-items-center bg-slate-900">
-      <h1 className="font-serif text-4xl text-white">Hello, World</h1>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
