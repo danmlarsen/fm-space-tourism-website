@@ -1,16 +1,19 @@
 import { useParams } from "react-router-dom";
 
 import { destinations } from "../data/data.json";
+
 import SectionTitle from "../components/SectionTitle";
+import DestinationNav from "../components/DestinationNav";
 
 export default function Destination() {
-  const { id = "Moon" } = useParams();
+  const { currentDestination = "Moon" } = useParams();
 
   const { name, images, description, distance, travel } = destinations.find(
-    (dest) => dest.name === id?.slice(0, 1).toUpperCase() + id?.slice(1),
+    (dest) =>
+      dest.name ===
+      currentDestination?.slice(0, 1).toUpperCase() +
+        currentDestination?.slice(1),
   )!;
-
-  console.log(images.png);
 
   return (
     <section className="p-300 space-y-300 container max-w-6xl text-center">
@@ -27,8 +30,11 @@ export default function Destination() {
             />
           </picture>
         </div>
-        <div>
-          <nav>NAV</nav>
+        <div className="space-y-300">
+          <DestinationNav
+            currentDestination={currentDestination}
+            destinations={destinations.map((destination) => destination.name)}
+          />
           <div className="space-y-300 divide-y divide-white/25">
             <div>
               <h2 className="font-serif text-2xl uppercase">{name}</h2>
