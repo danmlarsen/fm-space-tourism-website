@@ -11,7 +11,7 @@ export default function Technology() {
 
   return (
     <section className="space-y-300 container grid max-w-6xl grid-rows-[auto_1fr] text-center">
-      <div className="p-300">
+      <div className="px-300">
         <SectionTitle title="Space launch 101" sectionNumber="03" />
       </div>
       <div className="space-y-500">

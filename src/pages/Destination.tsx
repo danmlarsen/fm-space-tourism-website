@@ -16,7 +16,7 @@ export default function Destination() {
   )!;
 
   return (
-    <section className="p-300 space-y-300 container max-w-6xl text-center">
+    <section className="px-300 space-y-300 container max-w-6xl text-center">
       <div>
         <SectionTitle title="Pick your destination" sectionNumber="01" />
       </div>

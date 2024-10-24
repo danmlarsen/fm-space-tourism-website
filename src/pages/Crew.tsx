@@ -9,7 +9,7 @@ export default function Crew() {
   const { name, images, role, bio } = crew[selectedCrew];
 
   return (
-    <section className="p-300 space-y-300 container grid max-w-6xl grid-rows-[auto_1fr] text-center">
+    <section className="px-300 space-y-300 container grid max-w-6xl grid-rows-[auto_1fr] text-center">
       <div>
         <SectionTitle title="Meet your crew" sectionNumber="02" />
       </div>
