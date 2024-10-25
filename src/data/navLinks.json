@@ -1,0 +1,8 @@
+{
+  "navLinks": [
+    { "to": "/", "text": "Home" },
+    { "to": "/destination", "text": "Destination" },
+    { "to": "/crew", "text": "Crew" },
+    { "to": "/technology", "text": "Technology" }
+  ]
+}

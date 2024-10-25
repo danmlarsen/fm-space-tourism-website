@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Destination from "./pages/Destination";
 import Crew from "./pages/Crew";
 import Technology from "./pages/Technology";
+import { NavContextProvider } from "./context/NavContext";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <NavContextProvider>
+      <RouterProvider router={router} />;
+    </NavContextProvider>
+  );
 }
 
 export default App;

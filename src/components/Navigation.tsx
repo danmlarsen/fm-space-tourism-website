@@ -2,20 +2,15 @@ import { Link, useLocation } from "react-router-dom";
 
 import { matchPath } from "react-router-dom";
 
-const navigationItems = [
-  { to: "/", text: "Home" },
-  { to: "/destination", text: "Destination" },
-  { to: "/crew", text: "Crew" },
-  { to: "/technology", text: "Technology" },
-];
+import { navLinks } from "../data/navLinks.json";
 
 export default function Navigation() {
   return (
     <nav className="h-1200 px-500 relative hidden grow justify-end md:flex">
       <div className="absolute inset-[0] -z-40 bg-white/5 backdrop-blur-3xl"></div>
       <ul className="gap-600 flex">
-        {navigationItems.map((item, index) => (
-          <NavItem to={item.to} index={index}>
+        {navLinks.map((item, index) => (
+          <NavItem to={item.to} index={index} key={item.to}>
             {item.text}
           </NavItem>
         ))}
