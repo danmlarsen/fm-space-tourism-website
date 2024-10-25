@@ -2,7 +2,7 @@ import ExploreButton from "../components/ExploreButton";
 
 export default function Home() {
   return (
-    <section className="px-300 gap-300 container mx-auto grid max-w-6xl lg:grid-cols-2 lg:content-end">
+    <section className="px-300 md:py-1600 gap-300 container mx-auto grid max-w-6xl lg:grid-cols-2 lg:content-end">
       <div className="space-y-300 container mx-auto max-w-lg text-center lg:text-left">
         <span className="font-condensed text-sm uppercase text-blue-300 md:text-lg">
           So, you want to travel to

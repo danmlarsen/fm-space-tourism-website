@@ -16,32 +16,34 @@ export default function Destination() {
   )!;
 
   return (
-    <section className="px-300 space-y-300 container max-w-6xl text-center">
+    <section className="px-300 md:px-500 space-y-300 container mx-auto grid max-w-6xl grid-rows-[auto_1fr] text-center lg:text-left">
       <div>
         <SectionTitle title="Pick your destination" sectionNumber="01" />
       </div>
-      <div className="gap-300 grid grid-rows-[auto_1fr]">
-        <div>
-          <picture className="flex justify-center">
-            <img
-              className="w-1/3 object-cover"
-              src={images.png}
-              alt={`Image of ${name}`}
-            />
-          </picture>
+      <div className="gap-300 md:gap-400 grid grid-rows-[auto_1fr] md:grid-rows-2 lg:grid-cols-2 lg:grid-rows-none lg:items-center">
+        <div className="flex items-center justify-center">
+          <img
+            className="size-[150px] object-cover md:size-[300px] lg:size-[480px]"
+            src={images.png}
+            alt={`Image of ${name}`}
+          />
         </div>
-        <div className="space-y-300">
+        <div className="space-y-300 mx-auto max-w-xl">
           <DestinationNav
             currentDestination={currentDestination}
             destinations={destinations.map((destination) => destination.name)}
           />
           <div className="space-y-300 divide-y divide-white/25">
-            <div>
-              <h2 className="font-serif text-2xl uppercase">{name}</h2>
-              <p className="text-sm text-blue-300">{description}</p>
+            <div className="min-h-[250px]">
+              <h2 className="font-serif text-2xl uppercase md:text-[80px]">
+                {name}
+              </h2>
+              <p className="text-sm text-blue-300 md:text-base">
+                {description}
+              </p>
             </div>
-            <div className="uppercase">
-              <div className="pt-300">
+            <div className="pt-300 grid uppercase md:grid-cols-2">
+              <div className="">
                 <p className="text-xs text-blue-300">Avg. Distance</p>
                 <p className="font-serif text-lg">{distance}</p>
               </div>

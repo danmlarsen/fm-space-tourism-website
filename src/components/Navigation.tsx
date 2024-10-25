@@ -11,7 +11,7 @@ const navigationItems = [
 
 export default function Navigation() {
   return (
-    <nav className="h-1200 px-500 relative flex grow justify-end">
+    <nav className="h-1200 px-500 relative hidden grow justify-end md:flex">
       <div className="absolute inset-[0] -z-40 bg-white/5 backdrop-blur-3xl"></div>
       <ul className="gap-600 flex">
         {navigationItems.map((item, index) => (
@@ -42,7 +42,7 @@ function NavItem({
         <span>{children}</span>
       </Link>
       <div
-        className={`absolute bottom-[0] h-[3px] w-full bg-white transition duration-300 ${matchPath(to, pathname) ? "opacity-100" : "opacity-0 group-hover:opacity-50"}`}
+        className={`absolute bottom-[0] h-[3px] w-full bg-white transition duration-300 ${matchPath(to, pathname.split("/").slice(0, 2).join("/")) ? "opacity-100" : "opacity-0 group-hover:opacity-50"}`}
       ></div>
     </li>
   );

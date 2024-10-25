@@ -10,7 +10,7 @@ export default function DestinationNav({
   destinations,
 }: AppProps) {
   return (
-    <ul className="gap-400 h-400 flex justify-center">
+    <ul className="gap-400 h-400 flex justify-center lg:justify-start">
       {destinations.map((destination) => (
         <li
           className="font-condensed group relative text-sm uppercase"

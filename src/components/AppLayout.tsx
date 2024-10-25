@@ -7,7 +7,7 @@ export default function AppLayout() {
     <div className="grid min-h-screen grid-rows-[auto_1fr] text-white">
       <Background />
       <Header />
-      <main className="py-300 md:py-1600 flex">
+      <main className="py-300 flex">
         <Outlet />
       </main>
     </div>
