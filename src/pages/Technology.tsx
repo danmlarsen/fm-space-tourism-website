@@ -10,6 +10,7 @@ import SectionTitle from "../components/SectionTitle";
 
 import { technology } from "../data/data.json";
 import Pagination from "../components/Pagination";
+import { motion } from "framer-motion";
 
 export default function Technology() {
   const [selectedTech, setSelectedTech] = useState(0);
@@ -22,7 +23,13 @@ export default function Technology() {
   const { name, images, description } = technology[selectedTech];
 
   return (
-    <section className="container mx-auto grid max-w-6xl grid-rows-[auto_1fr] space-y-300 py-300 text-center md:py-500 lg:py-600 lg:text-start">
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      key="Technology"
+      className="container mx-auto grid max-w-6xl grid-rows-[auto_1fr] space-y-300 py-300 text-center md:py-500 lg:py-600 lg:text-start"
+    >
       <div className="px-300 lg:px-[0]">
         <SectionTitle title="Space launch 101" sectionNumber="03" />
       </div>
@@ -52,6 +59,6 @@ export default function Technology() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

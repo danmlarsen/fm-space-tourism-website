@@ -6,10 +6,12 @@ import Destination from "./pages/Destination";
 import Crew from "./pages/Crew";
 import Technology from "./pages/Technology";
 import { NavContextProvider } from "./context/NavContext";
+import ErrorElement from "./components/ErrorElement";
 
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
+    errorElement: <ErrorElement />,
     children: [
       {
         index: true,
@@ -26,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/technology",
         element: <Technology />,
+      },
+      {
+        path: "*",
+        element: <ErrorElement />,
       },
     ],
   },

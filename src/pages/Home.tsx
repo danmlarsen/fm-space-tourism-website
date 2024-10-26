@@ -1,8 +1,16 @@
 import ExploreButton from "../components/ExploreButton";
 
+import { motion } from "framer-motion";
+
 export default function Home() {
   return (
-    <section className="px-300 md:py-1600 gap-300 container mx-auto grid max-w-6xl lg:grid-cols-2 lg:content-end lg:gap-[0] lg:px-[0]">
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      key="Home"
+      className="container mx-auto grid max-w-6xl gap-300 px-300 md:py-1600 lg:grid-cols-2 lg:content-end lg:gap-[0] lg:px-[0]"
+    >
       <div className="container mx-auto max-w-lg text-center lg:mx-[0] lg:max-w-[540px] lg:text-left">
         <span className="font-condensed text-sm uppercase text-blue-300 md:text-lg">
           So, you want to travel to
@@ -20,6 +28,6 @@ export default function Home() {
       <div className="flex items-center justify-center lg:justify-end">
         <ExploreButton />
       </div>
-    </section>
+    </motion.section>
   );
 }

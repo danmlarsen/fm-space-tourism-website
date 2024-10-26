@@ -1,63 +1,135 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { destinations } from "../data/data.json";
 
 import SectionTitle from "../components/SectionTitle";
 import DestinationNav from "../components/DestinationNav";
 
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect } from "react";
+
+const fadeVariant = {
+  in: {
+    opacity: 1,
+  },
+  out: {
+    opacity: 0,
+  },
+};
+
 export default function Destination() {
   const { currentDestination = "Moon" } = useParams();
+  const navigate = useNavigate();
 
-  const { name, images, description, distance, travel } = destinations.find(
+  const foundDestination = destinations.find(
     (dest) =>
       dest.name ===
       currentDestination?.slice(0, 1).toUpperCase() +
         currentDestination?.slice(1),
   )!;
 
+  useEffect(() => {
+    if (!foundDestination) {
+      navigate("/destination/moon");
+    }
+  }, [foundDestination, navigate]);
+
+  if (!foundDestination) return;
+
+  const { name, images, description, distance, travel } = foundDestination;
+
   return (
-    <section className="py-300 md:py-500 lg:py-600 px-300 md:px-500 space-y-300 container mx-auto grid max-w-6xl grid-rows-[auto_1fr] text-center lg:px-[0] lg:text-left">
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      key="Destination"
+      className="container mx-auto grid max-w-6xl grid-rows-[auto_1fr] space-y-300 px-300 py-300 text-center md:px-500 md:py-500 lg:px-[0] lg:py-600 lg:text-left"
+    >
       <div>
         <SectionTitle title="Pick your destination" sectionNumber="01" />
       </div>
-      <div className="gap-300 md:gap-400 grid grid-rows-[auto_1fr] md:grid-rows-2 lg:grid-cols-2 lg:grid-rows-none lg:items-center">
-        <div className="flex items-center justify-center">
-          <picture>
-            <source srcSet={images.webp} />
-            <img
-              className="size-[150px] object-cover md:size-[300px] lg:size-[480px]"
-              src={images.png}
-              alt={`Image of ${name}`}
-            />
-          </picture>
-        </div>
-        <div className="space-y-300 mx-auto max-w-xl">
+      <div className="grid grid-rows-[auto_1fr] gap-300 md:grid-rows-2 md:gap-400 lg:grid-cols-2 lg:grid-rows-none lg:items-center">
+        <AnimatePresence mode="wait">
+          <motion.div
+            initial={{ opacity: 0, x: "-100%" }}
+            animate={{ opacity: 1, x: "0" }}
+            exit={{ opacity: 0 }}
+            key={name}
+            className="flex items-center justify-center"
+          >
+            <picture>
+              <source srcSet={images.webp} />
+              <img
+                className="size-[150px] object-cover md:size-[300px] lg:size-[480px]"
+                src={images.png}
+                alt={`Image of ${name}`}
+              />
+            </picture>
+          </motion.div>
+        </AnimatePresence>
+        <div className="mx-auto max-w-xl space-y-300">
           <DestinationNav
             currentDestination={currentDestination}
             destinations={destinations.map((destination) => destination.name)}
           />
           <div className="space-y-300 divide-y divide-white/25">
-            <div className="min-h-[200px] lg:min-h-[250px]">
-              <h2 className="font-serif text-2xl uppercase md:text-[80px]">
-                {name}
-              </h2>
-              <p className="text-sm text-blue-300 md:text-base">
-                {description}
-              </p>
-            </div>
-            <div className="pt-300 grid uppercase md:grid-cols-2">
+            <AnimatePresence mode="wait">
+              <motion.div
+                initial="out"
+                animate="in"
+                exit="out"
+                variants={fadeVariant}
+                key={name}
+                className="min-h-[200px] lg:min-h-[250px]"
+              >
+                <h2 className="font-serif text-2xl uppercase md:text-[80px]">
+                  {name}
+                </h2>
+
+                <p
+                  key={description}
+                  className="text-sm text-blue-300 md:text-base"
+                >
+                  {description}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+            <div className="grid pt-300 uppercase md:grid-cols-2">
               <div className="">
                 <p className="text-xs text-blue-300">Avg. Distance</p>
-                <p className="font-serif text-lg">{distance}</p>
+                <AnimatePresence mode="wait">
+                  <motion.p
+                    initial="out"
+                    animate="in"
+                    exit="out"
+                    variants={fadeVariant}
+                    key={name}
+                    className="font-serif text-lg"
+                  >
+                    {distance}
+                  </motion.p>
+                </AnimatePresence>
               </div>
               <div>
                 <p className="text-xs text-blue-300">Est. Travel time</p>
-                <p className="font-serif text-lg">{travel}</p>
+                <AnimatePresence mode="wait">
+                  <motion.p
+                    initial="out"
+                    animate="in"
+                    exit="out"
+                    variants={fadeVariant}
+                    key={name}
+                    className="font-serif text-lg"
+                  >
+                    {travel}
+                  </motion.p>
+                </AnimatePresence>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
