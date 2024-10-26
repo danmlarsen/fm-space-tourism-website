@@ -6,7 +6,7 @@ import { navLinks } from "../data/navLinks.json";
 
 export default function Navigation() {
   return (
-    <nav className="h-1200 px-500 relative hidden grow justify-end md:flex">
+    <nav className="h-1200 px-500 lg:px-800 relative hidden grow justify-end md:flex">
       <div className="absolute inset-[0] -z-40 bg-white/5 backdrop-blur-3xl"></div>
       <ul className="gap-600 flex">
         {navLinks.map((item, index) => (

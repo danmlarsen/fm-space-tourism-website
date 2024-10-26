@@ -1,6 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-const defaultTheme = require("tailwindcss/defaultTheme");
+import defaultTheme from "tailwindcss/defaultTheme";
 
+/** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
@@ -90,6 +90,9 @@ export default {
           },
         ],
       },
+      maxWidth: {
+        "6xl": "69.375rem",
+      },
     },
     spacing: {
       1600: "8rem",
@@ -105,6 +108,11 @@ export default {
       100: "0.5rem",
       50: "0.25rem",
       25: "0.125rem",
+    },
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1200px",
     },
   },
   plugins: [],

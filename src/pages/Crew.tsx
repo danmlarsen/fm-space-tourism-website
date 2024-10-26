@@ -9,13 +9,13 @@ export default function Crew() {
   const { name, images, role, bio } = crew[selectedCrew];
 
   return (
-    <section className="px-300 md:px-500 space-y-300 container mx-auto grid max-w-6xl grid-rows-[auto_1fr] text-center lg:text-left">
+    <section className="py-300 md:py-500 lg:py-600 px-300 md:px-500 space-y-300 container mx-auto grid max-w-6xl grid-rows-[auto_1fr] text-center lg:px-[0] lg:text-left">
       <div>
         <SectionTitle title="Meet your crew" sectionNumber="02" />
       </div>
-      <div className="gap-300 grid h-full grid-rows-[1fr_340px] md:grid-rows-[1fr_560px] lg:grid-cols-2 lg:grid-rows-none">
-        <div className="mx-auto grid max-w-xl grid-rows-[1fr_63px] items-center">
-          <div className="space-y-200">
+      <div className="gap-300 grid h-full grid-rows-[1fr_340px] md:grid-rows-[1fr_auto] lg:grid-cols-2 lg:grid-rows-none">
+        <div className="mx-auto grid max-w-xl grid-rows-[1fr_63px] md:items-center">
+          <div className="space-y-200 md:min-h-[200px] lg:min-h-[250px]">
             <span className="md:text-md font-serif text-base uppercase text-white/50">
               {role}
             </span>
@@ -32,11 +32,14 @@ export default function Crew() {
         </div>
 
         <div className="flex items-center justify-center">
-          <img
-            className="max-h-full"
-            src={images.png}
-            alt={`Image of ${name}`}
-          />
+          <picture className="h-full">
+            <source srcSet={images.webp} />
+            <img
+              className="h-full max-w-[540px] object-cover md:max-h-[500px] lg:max-h-[600px]"
+              src={images.png}
+              alt={`Image of ${name}`}
+            />
+          </picture>
         </div>
       </div>
     </section>

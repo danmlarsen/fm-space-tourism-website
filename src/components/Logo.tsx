@@ -4,7 +4,7 @@ import IconLogo from "../assets/images/logo.svg";
 export default function Logo() {
   return (
     <Link className="block" to="/">
-      <img src={IconLogo} alt="Space Logo" />
+      <img className="size-500 md:size-600" src={IconLogo} alt="Space Logo" />
     </Link>
   );
 }

@@ -12,7 +12,9 @@ export default function Pagination({
   selectFn,
 }: AppProps) {
   return (
-    <div className={`gap-200 flex ${type === "large" ? "lg:flex-col" : ""}`}>
+    <div
+      className={`gap-200 flex ${type === "large" ? "lg:flex-col" : "lg:gap-500"}`}
+    >
       {type === "small" &&
         Array.from({ length: numPages }, (_, index) => index).map((page) => (
           <button

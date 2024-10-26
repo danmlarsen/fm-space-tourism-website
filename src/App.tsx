@@ -34,7 +34,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <NavContextProvider>
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
     </NavContextProvider>
   );
 }

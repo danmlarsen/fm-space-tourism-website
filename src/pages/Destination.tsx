@@ -16,17 +16,20 @@ export default function Destination() {
   )!;
 
   return (
-    <section className="px-300 md:px-500 space-y-300 container mx-auto grid max-w-6xl grid-rows-[auto_1fr] text-center lg:text-left">
+    <section className="py-300 md:py-500 lg:py-600 px-300 md:px-500 space-y-300 container mx-auto grid max-w-6xl grid-rows-[auto_1fr] text-center lg:px-[0] lg:text-left">
       <div>
         <SectionTitle title="Pick your destination" sectionNumber="01" />
       </div>
       <div className="gap-300 md:gap-400 grid grid-rows-[auto_1fr] md:grid-rows-2 lg:grid-cols-2 lg:grid-rows-none lg:items-center">
         <div className="flex items-center justify-center">
-          <img
-            className="size-[150px] object-cover md:size-[300px] lg:size-[480px]"
-            src={images.png}
-            alt={`Image of ${name}`}
-          />
+          <picture>
+            <source srcSet={images.webp} />
+            <img
+              className="size-[150px] object-cover md:size-[300px] lg:size-[480px]"
+              src={images.png}
+              alt={`Image of ${name}`}
+            />
+          </picture>
         </div>
         <div className="space-y-300 mx-auto max-w-xl">
           <DestinationNav
@@ -34,7 +37,7 @@ export default function Destination() {
             destinations={destinations.map((destination) => destination.name)}
           />
           <div className="space-y-300 divide-y divide-white/25">
-            <div className="min-h-[250px]">
+            <div className="min-h-[200px] lg:min-h-[250px]">
               <h2 className="font-serif text-2xl uppercase md:text-[80px]">
                 {name}
               </h2>
