@@ -8,34 +8,40 @@ import Technology from "./pages/Technology";
 import { NavContextProvider } from "./context/NavContext";
 import ErrorElement from "./components/ErrorElement";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      element: <AppLayout />,
+      errorElement: <ErrorElement />,
+
+      children: [
+        {
+          index: true,
+          element: <Home />,
+        },
+        {
+          path: "/destination/:currentDestination?",
+          element: <Destination />,
+        },
+        {
+          path: "/crew",
+          element: <Crew />,
+        },
+        {
+          path: "/technology",
+          element: <Technology />,
+        },
+        {
+          path: "*",
+          element: <ErrorElement />,
+        },
+      ],
+    },
+  ],
   {
-    element: <AppLayout />,
-    errorElement: <ErrorElement />,
-    children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-      {
-        path: "/destination/:currentDestination?",
-        element: <Destination />,
-      },
-      {
-        path: "/crew",
-        element: <Crew />,
-      },
-      {
-        path: "/technology",
-        element: <Technology />,
-      },
-      {
-        path: "*",
-        element: <ErrorElement />,
-      },
-    ],
+    basename: "/fm-space-tourism-website",
   },
-]);
+);
 
 function App() {
   return (
