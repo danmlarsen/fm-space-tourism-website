@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
 import resolveConfig from "tailwindcss/resolveConfig";
+// @ts-expect-error ...
 import tailwindConfig from "../../tailwind.config.js";
 
 const { theme } = resolveConfig(tailwindConfig);

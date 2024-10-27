@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
 import resolveConfig from "tailwindcss/resolveConfig";
+// @ts-expect-error ...
 import tailwindConfig from "../../tailwind.config.js";
 
 const { theme } = resolveConfig(tailwindConfig);
