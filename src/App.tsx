@@ -1,4 +1,4 @@
-import { createHashRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import AppLayout from "./components/AppLayout";
 import Home from "./pages/Home";
@@ -8,8 +8,7 @@ import Technology from "./pages/Technology";
 import { NavContextProvider } from "./context/NavContext";
 import ErrorElement from "./components/ErrorElement";
 
-// const router = createBrowserRouter(
-const router = createHashRouter(
+const router = createBrowserRouter(
   [
     {
       element: <AppLayout />,
