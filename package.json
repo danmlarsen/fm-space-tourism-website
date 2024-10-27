@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build --base=/fm-space-tourism-website/",
     "lint": "eslint .",
     "preview": "vite preview --host --base=/fm-space-tourism-website/",
-    "push": "push-dir -dir=dist --branch=gh-pages --cleanup --verbose"
+    "push": "push-dir --dir=dist --branch=gh-pages --cleanup --verbose"
   },
   "dependencies": {
     "framer-motion": "^11.11.10",
