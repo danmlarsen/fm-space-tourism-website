@@ -10,13 +10,16 @@ export default function DestinationNav({
   destinations,
 }: AppProps) {
   return (
-    <ul className="gap-400 h-400 flex justify-center lg:justify-start">
+    <ul className="flex h-400 justify-center gap-400 lg:justify-start">
       {destinations.map((destination) => (
         <li
-          className="font-condensed group relative text-sm uppercase"
+          className="group relative font-condensed text-sm uppercase"
           key={destination}
         >
-          <Link to={`/destination/${destination.toLowerCase()}`}>
+          <Link
+            to={`/destination/${destination.toLowerCase()}`}
+            className="transition duration-300 focus:outline-none focus-visible:ring focus-visible:ring-blue-300"
+          >
             {destination}
           </Link>
           <div

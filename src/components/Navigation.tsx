@@ -6,9 +6,9 @@ import { navLinks } from "../data/navLinks.json";
 
 export default function Navigation() {
   return (
-    <nav className="h-1200 px-500 lg:px-800 relative hidden grow justify-end md:flex">
+    <nav className="relative hidden h-1200 grow justify-end px-500 md:flex lg:px-800">
       <div className="absolute inset-[0] -z-40 bg-white/5 backdrop-blur-3xl"></div>
-      <ul className="gap-600 flex">
+      <ul className="flex gap-600">
         {navLinks.map((item, index) => (
           <NavItem to={item.to} index={index} key={item.to}>
             {item.text}
@@ -31,8 +31,11 @@ function NavItem({
   const { pathname } = useLocation();
 
   return (
-    <li className="font-condensed group relative flex items-center text-sm uppercase">
-      <Link className="gap-150 flex" to={to}>
+    <li className="group relative flex items-center font-condensed text-sm uppercase">
+      <Link
+        className="flex gap-150 transition duration-300 focus:outline-none focus-visible:ring focus-visible:ring-blue-300"
+        to={to}
+      >
         <span className="font-bold">0{index}</span>
         <span>{children}</span>
       </Link>

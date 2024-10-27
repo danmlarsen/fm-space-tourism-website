@@ -7,6 +7,8 @@ import tailwindConfig from "../../tailwind.config.js";
 
 const { theme } = resolveConfig(tailwindConfig);
 
+const validBackgrounds = ["home", "destination", "crew", "technology"];
+
 export default function Background() {
   const isTablet = useMediaQuery({ query: `(min-width: ${theme.screens.md})` });
   const isDesktop = useMediaQuery({
@@ -14,9 +16,13 @@ export default function Background() {
   });
 
   const location = useLocation();
-  const page = location.pathname.split("/")[1] || "home";
+  const currentPageName = location.pathname.split("/")[1];
 
-  const backgroundImage = `/assets/${page}/background-${page}-${isDesktop ? "desktop" : isTablet ? "tablet" : "mobile"}.jpg`;
+  const currentPageBackground = validBackgrounds.includes(currentPageName)
+    ? currentPageName
+    : "home";
+
+  const backgroundImage = `/assets/${currentPageBackground}/background-${currentPageBackground}-${isDesktop ? "desktop" : isTablet ? "tablet" : "mobile"}.jpg`;
 
   return (
     <AnimatePresence mode="wait">
@@ -24,7 +30,7 @@ export default function Background() {
         initial={{ opacity: 0, scale: 1.1 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 1.1 }}
-        key={page}
+        key={currentPageBackground}
         className="fixed inset-[0] -z-50 bg-cover bg-no-repeat"
         style={{ backgroundImage: `url('${backgroundImage}')` }}
       ></motion.div>
