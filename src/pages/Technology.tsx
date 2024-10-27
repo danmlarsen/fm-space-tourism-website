@@ -44,7 +44,7 @@ export default function Technology() {
             className="flex justify-center lg:order-2"
           >
             <img
-              className="h-[258px] w-full object-cover object-center md:h-[357px] lg:h-[600px]"
+              className="h-[16.125rem] w-full object-cover object-center md:h-[22.3125rem] lg:h-[37.5rem]"
               src={
                 import.meta.env.BASE_URL + isTablet && !isDesktop
                   ? images.landscape
@@ -69,7 +69,7 @@ export default function Technology() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               key={name}
-              className="min-h-[250px]"
+              className="min-h-[15.625rem]"
             >
               <span className="font-serif text-base uppercase text-white/50">
                 The terminology...

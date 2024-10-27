@@ -8,12 +8,10 @@
     "dev": "vite --host",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview --host",
-    "push": "push-dir --dir=dist --branch=gh-pages --cleanup --verbose"
+    "preview": "vite preview --host"
   },
   "dependencies": {
     "framer-motion": "^11.11.10",
-    "push-dir": "^0.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-responsive": "^10.0.0",

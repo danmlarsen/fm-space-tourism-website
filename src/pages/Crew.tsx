@@ -21,15 +21,15 @@ export default function Crew() {
       <div>
         <SectionTitle title="Meet your crew" sectionNumber="02" />
       </div>
-      <div className="grid h-full grid-rows-[1fr_340px] gap-300 overflow-x-hidden md:grid-rows-[1fr_auto] lg:grid-cols-2 lg:grid-rows-none">
-        <div className="mx-auto grid max-w-xl grid-rows-[1fr_63px] md:items-center">
+      <div className="grid h-full grid-rows-[1fr_21.25rem] gap-300 overflow-x-hidden md:grid-rows-[1fr_auto] lg:grid-cols-2 lg:grid-rows-none">
+        <div className="mx-auto grid max-w-xl grid-rows-[1fr_3.9375rem] md:items-center">
           <AnimatePresence mode="wait">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               key={name}
-              className="space-y-200 md:min-h-[200px] lg:min-h-[250px]"
+              className="space-y-200 md:min-h-[12.5rem] lg:min-h-[15.625rem]"
             >
               <span className="font-serif text-base uppercase text-white/50 md:text-md">
                 {role}
@@ -60,7 +60,7 @@ export default function Crew() {
             <picture className="h-full">
               <source srcSet={images.webp} />
               <img
-                className="h-full max-w-[272px] object-cover md:max-h-[500px] md:max-w-[540px] lg:max-h-[600px]"
+                className="h-full max-w-[17rem] object-cover md:max-h-[31.25rem] md:max-w-[33.75rem] lg:max-h-[37.5rem]"
                 src={import.meta.env.BASE_URL + images.png}
                 alt={`Image of ${name}`}
                 style={{

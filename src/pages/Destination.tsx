@@ -61,7 +61,7 @@ export default function Destination() {
             <picture>
               <source srcSet={import.meta.env.BASE_URL + images.webp} />
               <img
-                className="size-[150px] object-cover md:size-[300px] lg:size-[480px]"
+                className="size-[9.375rem] object-cover md:size-[18.75rem] lg:size-[30rem]"
                 src={images.png}
                 alt={`Image of ${name}`}
               />
@@ -81,9 +81,9 @@ export default function Destination() {
                 exit="out"
                 variants={fadeVariant}
                 key={name}
-                className="min-h-[200px] lg:min-h-[250px]"
+                className="min-h-[12.5rem] lg:min-h-[15.625rem]"
               >
-                <h2 className="font-serif text-2xl uppercase md:text-[80px]">
+                <h2 className="font-serif text-2xl uppercase md:text-[5rem]">
                   {name}
                 </h2>
 

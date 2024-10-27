@@ -11,7 +11,7 @@ export default function Home() {
       key="Home"
       className="container mx-auto grid max-w-6xl gap-300 px-300 md:py-1600 lg:grid-cols-2 lg:content-end lg:gap-[0] lg:px-[0]"
     >
-      <div className="container mx-auto max-w-lg text-center lg:mx-[0] lg:max-w-[540px] lg:text-left">
+      <div className="container mx-auto max-w-lg text-center lg:mx-[0] lg:max-w-[33.75rem] lg:text-left">
         <span className="font-condensed text-sm uppercase text-blue-300 md:text-lg">
           So, you want to travel to
         </span>

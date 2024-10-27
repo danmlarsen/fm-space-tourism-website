@@ -18,7 +18,7 @@ export default function Pagination({
       {type === "small" &&
         Array.from({ length: numPages }, (_, index) => index).map((page) => (
           <button
-            className={`size-[10px] rounded-full transition duration-300 focus:outline-none focus-visible:ring focus-visible:ring-blue-300 lg:size-[15px] ${page === curPage ? "bg-white" : "bg-white/20 hover:bg-white/50"}`}
+            className={`size-[0.625rem] rounded-full transition duration-300 focus:outline-none focus-visible:ring focus-visible:ring-blue-300 lg:size-[0.9375rem] ${page === curPage ? "bg-white" : "bg-white/20 hover:bg-white/50"}`}
             onClick={() => selectFn(page)}
             key={page}
           ></button>
@@ -27,7 +27,7 @@ export default function Pagination({
       {type === "large" &&
         Array.from({ length: numPages }, (_, index) => index).map((page) => (
           <button
-            className={`size-[56px] rounded-full border text-base transition duration-300 focus:outline-none focus-visible:ring focus-visible:ring-blue-300 md:text-md lg:size-1000 ${page === curPage ? "border-white bg-white text-blue-900" : "border-white/25 hover:border-white/50"}`}
+            className={`size-[3.5rem] rounded-full border text-base transition duration-300 focus:outline-none focus-visible:ring focus-visible:ring-blue-300 md:text-md lg:size-1000 ${page === curPage ? "border-white bg-white text-blue-900" : "border-white/25 hover:border-white/50"}`}
             onClick={() => selectFn(page)}
             key={page}
           >

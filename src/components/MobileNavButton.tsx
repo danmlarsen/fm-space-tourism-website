@@ -11,7 +11,7 @@ export default function MobileNavButton() {
 
   return (
     <button
-      className="relative z-50 flex h-[21px] w-300 flex-col justify-between md:hidden"
+      className="relative z-50 flex h-[1.3125rem] w-300 flex-col justify-between md:hidden"
       onClick={() => setMobileNavOpen((prev) => !prev)}
     >
       {mobileNavOpen ? (
