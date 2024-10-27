@@ -23,7 +23,7 @@ export default function Background() {
     ? currentPageName
     : "home";
 
-  const backgroundImage = `/assets/${currentPageBackground}/background-${currentPageBackground}-${isDesktop ? "desktop" : isTablet ? "tablet" : "mobile"}.jpg`;
+  const backgroundImage = `${import.meta.env.BASE_URL}assets/${currentPageBackground}/background-${currentPageBackground}-${isDesktop ? "desktop" : isTablet ? "tablet" : "mobile"}.jpg`;
 
   return (
     <AnimatePresence mode="wait">

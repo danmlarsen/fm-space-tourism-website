@@ -61,7 +61,7 @@ export default function Crew() {
               <source srcSet={images.webp} />
               <img
                 className="h-full max-w-[272px] object-cover md:max-h-[500px] md:max-w-[540px] lg:max-h-[600px]"
-                src={images.png}
+                src={import.meta.env.BASE_URL + images.png}
                 alt={`Image of ${name}`}
                 style={{
                   maskImage: "linear-gradient(rgb(0,0,0,1) 90%, transparent)",

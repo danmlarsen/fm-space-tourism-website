@@ -45,7 +45,11 @@ export default function Technology() {
           >
             <img
               className="h-[258px] w-full object-cover object-center md:h-[357px] lg:h-[600px]"
-              src={isTablet && !isDesktop ? images.landscape : images.portrait}
+              src={
+                import.meta.env.BASE_URL + isTablet && !isDesktop
+                  ? images.landscape
+                  : images.portrait
+              }
               alt={`Image of ${name}`}
             />
           </motion.div>

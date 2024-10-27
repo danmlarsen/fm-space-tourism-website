@@ -59,7 +59,7 @@ export default function Destination() {
             className="flex items-center justify-center"
           >
             <picture>
-              <source srcSet={images.webp} />
+              <source srcSet={import.meta.env.BASE_URL + images.webp} />
               <img
                 className="size-[150px] object-cover md:size-[300px] lg:size-[480px]"
                 src={images.png}
