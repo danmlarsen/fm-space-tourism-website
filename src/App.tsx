@@ -39,7 +39,7 @@ const router = createBrowserRouter(
     },
   ],
   {
-    basename: "/fm-space-tourism-website",
+    // basename: "/fm-space-tourism-website",
   },
 );
 
